@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import { ProductsList } from './components/ProductsList/ProductsList';
+import { ProductCard } from './components/ProductCard/PorductCard';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -16,7 +18,18 @@ function App() {
 
   return (
     <>
-    <h1>Hello world!</h1>
+    <ProductsList>
+      {
+        productsCopy.map(product => (
+          <ProductCard 
+          key={product.id}
+          title={product.title}
+          img={product.images[0]}
+          price={product.price}
+          />
+        ))
+      }
+    </ProductsList>
     </>
   )
 }

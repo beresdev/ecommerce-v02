@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+
 import { ProductsList } from "./components/ProductsList/ProductsList";
 import { ProductCard } from "./components/ProductCard/PorductCard";
 import { SearchBar } from './components/SearchBar/SearchBar';

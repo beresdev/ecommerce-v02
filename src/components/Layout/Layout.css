@@ -1,0 +1,45 @@
+.layout-container {
+  width: 90%;
+  height: 5rem;
+  background-color: #dc9545;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 5%;
+  justify-content: space-between;
+}
+
+.layout-container button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 3ms;
+}
+
+.layout-container button:hover {
+  transform: scale(1.1);
+  font-size: medium;
+  font-weight: 600;
+}
+
+.layout-container .layout-left {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.layout-container .layout-left .pages-container {
+  margin-left: 5%;
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.layout-container .layout-right {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}

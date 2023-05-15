@@ -1,46 +1,49 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
+
 import { ProductsList } from "./components/ProductsList/ProductsList";
 import { ProductCard } from "./components/ProductCard/PorductCard";
+import { SearchBar } from "./components/SearchBar/SearchBar";
 import { Layout } from "./components/Layout/Layout";
-import { routes } from "./utils/routes";
 
 function App() {
   const [products, setProducts] = useState([]);
-
-  let productsCopy = [...products];
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
     fetch("https://dummyjson.com/products?limit=100")
       .then((res) => res.json())
-      .then((data) => setProducts(data.products));
+      .then((data) => {
+        setProducts(data.products);
+        setFilteredProducts(data.products);
+      });
   }, []);
 
-  //console.log(productsCopy)
+  const handleSearch = (event) => {
+    const term = event.target.value.toLowerCase();
+    setSearchTerm(term);
+
+    const filtered = products.filter((product) =>
+      product.title.toLowerCase().includes(term)
+    );
+    setFilteredProducts(filtered);
+  };
 
   return (
-    <BrowserRouter>
-      <Routes>
-        {/* <Layout /> */}
-        <Route
-          index
-          path={routes.PRODUCTS}
-          element={
-            <ProductsList>
-              {productsCopy.map((product) => (
-                <ProductCard
-                  key={product.id}
-                  title={product.title}
-                  img={product.images[0]}
-                  price={product.price}
-                />
-              ))}
-            </ProductsList>
-          }
-        />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <Layout />
+      <SearchBar handleSearch={handleSearch} searchTerm={searchTerm} />
+      <ProductsList>
+        {filteredProducts.map((product) => (
+          <ProductCard
+            key={product.id}
+            title={product.title}
+            img={product.images[0]}
+            price={product.price}
+          />
+        ))}
+      </ProductsList>
+    </>
   );
 }
 

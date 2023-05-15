@@ -1,7 +1,11 @@
-import { useEffect, useState } from 'react'
-import { ProductsList } from './components/ProductsList/ProductsList';
-import { ProductCard } from './components/ProductCard/PorductCard';
+import { useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import { ProductsList } from "./components/ProductsList/ProductsList";
+import { ProductCard } from "./components/ProductCard/PorductCard";
 import { SearchBar } from './components/SearchBar/SearchBar';
+import { Layout } from "./components/Layout/Layout";
+import { routes } from "./utils/routes";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -29,21 +33,22 @@ function App() {
 
   return (
     <>
-    <SearchBar handleSearch={handleSearch} searchTerm={searchTerm} />
-    <ProductsList>
-      {
-        filteredProducts.map(product => (
-          <ProductCard 
-          key={product.id}
-          title={product.title}
-          img={product.images[0]}
-          price={product.price}
-          />
-        ))
-      }
-    </ProductsList>
+      <Layout />
+      <SearchBar handleSearch={handleSearch} searchTerm={searchTerm} />
+      <ProductsList>
+        {
+          filteredProducts.map(product => (
+            <ProductCard 
+            key={product.id}
+            title={product.title}
+            img={product.images[0]}
+            price={product.price}
+            />
+          ))
+        }
+      </ProductsList>
     </>
   )
 }
 
-export default App
+export default App;

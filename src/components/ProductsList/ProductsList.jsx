@@ -1,6 +1,8 @@
+import './ProduuctsList.css'
+
 function ProductsList(props) {
     return(
-      <ul>
+      <ul className='products-container'>
         {props.children}
       </ul>
     );

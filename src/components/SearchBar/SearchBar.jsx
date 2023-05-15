@@ -1,8 +1,9 @@
+import './SearchBar.css'
 
 function SearchBar({ handleSearch, searchTerm }) {
     return (
-      <form>
-        <p>Filter & Sort</p>
+      <form className='search-form'>
+        <p>Filter & Sort <i class="fa-solid fa-filter"></i></p>
         <input type="text" onChange={handleSearch} value={searchTerm} />
       </form>
     )

@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
+
 import { ProductsList } from "./components/ProductsList/ProductsList";
 import { ProductCard } from "./components/ProductCard/PorductCard";
 import { SearchBar } from './components/SearchBar/SearchBar';
 import { Layout } from "./components/Layout/Layout";
-import { routes } from "./utils/routes";
 
 function App() {
   const [products, setProducts] = useState([]);

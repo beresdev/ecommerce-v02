@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 function Layout() {
   return (
     <div>
@@ -14,7 +12,6 @@ function Layout() {
       <section>
         <button>cart</button>
         <button>Sign up</button>
-        <Link>Sign in</Link>
       </section>
     </div>
   );

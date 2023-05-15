@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 function Layout() {
   return (
@@ -14,7 +14,7 @@ function Layout() {
       <section>
         <button>cart</button>
         <button>Sign up</button>
-        <Link>Sign in</Link>
+        {/* <Link>Sign in</Link> */}
       </section>
     </div>
   );

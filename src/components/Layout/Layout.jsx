@@ -1,6 +1,5 @@
 import "./Layout.css";
 
-
 function Layout() {
   return (
     <div className="layout-container">
@@ -16,6 +15,7 @@ function Layout() {
         <button>cart</button>
         <button>Sign up</button>
         <button>Sign in</button>
+
       </section>
     </div>
   );

@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Layout } from "./components/Layout/Layout";
 import { ProductsList } from "./components/ProductsList/ProductsList";
 import { ProductCard } from "./components/ProductCard/PorductCard";
+import { Layout } from "./components/Layout/Layout";
+import { routes } from "./utils/routes";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -18,19 +20,27 @@ function App() {
   //console.log(productsCopy)
 
   return (
-    <>
-      <Layout />
-      <ProductsList>
-        {productsCopy.map((product) => (
-          <ProductCard
-            key={product.id}
-            title={product.title}
-            img={product.images[0]}
-            price={product.price}
-          />
-        ))}
-      </ProductsList>
-    </>
+    <BrowserRouter>
+      <Routes>
+        {/* <Layout /> */}
+        <Route
+          index
+          path={routes.PRODUCTS}
+          element={
+            <ProductsList>
+              {productsCopy.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  title={product.title}
+                  img={product.images[0]}
+                  price={product.price}
+                />
+              ))}
+            </ProductsList>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

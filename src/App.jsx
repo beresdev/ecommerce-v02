@@ -3,8 +3,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { ProductsList } from "./components/ProductsList/ProductsList";
 import { ProductCard } from "./components/ProductCard/PorductCard";
+import { Layout } from "./components/Layout/Layout";
 import { routes } from "./utils/routes";
-/* import { Layout } from "./components/Layout/Layout"; */
 
 function App() {
   const [products, setProducts] = useState([]);

@@ -1,4 +1,4 @@
-import './ProduuctsList.css'
+import './ProductsList.css'
 
 function ProductsList(props) {
     return(

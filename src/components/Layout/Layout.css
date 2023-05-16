@@ -1,8 +1,8 @@
 .layout-container {
-  width: 90%;
+  width: 100%;
   height: 5rem;
-  background-color: #dc9545;
-  color: #ffffff;
+  background-color: var(--orange-light);
+  color: var(--white1);
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -13,7 +13,7 @@
 .layout-container button {
   background: none;
   border: none;
-  color: #ffffff;
+  color: var(--white1);
   cursor: pointer;
   transition: 3ms;
 }

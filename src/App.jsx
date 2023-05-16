@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 import { ProductsList } from "./components/ProductsList/ProductsList";
-import { ProductCard } from "./components/ProductCard/PorductCard";
+import { ProductCard } from "./components/ProductCard/ProductCard";
 import { SearchBar } from './components/SearchBar/SearchBar';
 import { Layout } from "./components/Layout/Layout";
 

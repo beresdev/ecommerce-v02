@@ -1,18 +1,20 @@
-import "/product-styles.css"
-import { AiFillPlusCircle } from "react-icons/ai"
+import "./ProductCard.css";
+import { AiFillPlusCircle } from "react-icons/ai";
 function ProductCard(props) {
-    return(
-        <div class = "product-card ">
-                <AiFillPlusCircle class = "plus"/>
-                <div class="product-image">
-                    <img src={props.img}></img>
-                    <div class="product-details">
-                    <p class="tittle">{props.title}</p>
-                    <p class="tittle">$ {props.price}</p> 
-                    </div>
-            </div>
+  return (
+    <div className="product-card-container">
+      <div className="product-card">
+        <figure className="product-image">
+          <img src={props.img}></img>
+        </figure>
+        <div className="product-details">
+          <p className="title">{props.title}</p>
+          <p className="price">$ {props.price}</p>
         </div>
-    )
+      </div>
+      <AiFillPlusCircle className="addToCart-button" />
+    </div>
+  );
 }
 
-export { ProductCard }
+export { ProductCard };

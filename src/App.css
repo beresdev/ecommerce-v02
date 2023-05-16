@@ -3,3 +3,14 @@
   margin: 0;
 }
 
+:root {
+  --jade: "#36B6AE";
+  --orange: "#DC9545";
+  --purple: "#BA93E9";
+  --red: "#DB0E3F";
+  --graylight: "#EAE9E9";
+  --fontlight: "#798897";
+  --fontdark: "#5F6974";
+  --white: "#ffffff";
+  --black: "#000000";
+}

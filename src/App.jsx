@@ -12,6 +12,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [cartItems, setCartItems] = useState([]);
+  const [showCart, setShowCart] = useState(false);
 
   useEffect(() => {
     fetch("https://dummyjson.com/products?limit=100")
@@ -21,6 +22,10 @@ function App() {
         setFilteredProducts(data.products);
       });
   }, []);
+
+  const handleCartClick = () => {
+    setShowCart(!showCart);
+  };
 
   const handleSearch = (event) => {
     const term = event.target.value.toLowerCase();
@@ -38,7 +43,7 @@ function App() {
 
   return (
     <>
-      <Layout />
+      <Layout handleCartClick={handleCartClick} />
       <SearchBar handleSearch={handleSearch} searchTerm={searchTerm} />
       <ProductsList>
         {filteredProducts.map((product) => (
@@ -51,7 +56,7 @@ function App() {
           />
         ))}
       </ProductsList>
-      <CartItems cartItems={cartItems} />
+      {showCart && <CartItems cartItems={cartItems} />}
     </>
   );
 }

@@ -1,6 +1,6 @@
 import "./Layout.css";
 
-function Layout() {
+function Layout({ handleCartClick }) {
   return (
     <div className="layout-container">
       <section className="layout-left">
@@ -12,10 +12,11 @@ function Layout() {
         </div>
       </section>
       <section className="layout-right">
-        <button>cart</button>
+        <button onClick={handleCartClick} className="shop-cart">
+          cart
+        </button>
         <button>Sign up</button>
         <button>Sign in</button>
-
       </section>
     </div>
   );

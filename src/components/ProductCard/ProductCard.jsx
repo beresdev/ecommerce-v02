@@ -1,8 +1,10 @@
 import "./ProductCard.css";
 import { AiFillPlusCircle } from "react-icons/ai";
+
 function ProductCard(props) {
+
   return (
-    <div className="product-card-container">
+    <div className="product-card-container" onClick={() => props.onProductClick(props.id)}>
       <div className="product-card">
         <figure className="product-image">
           <img src={props.img}></img>

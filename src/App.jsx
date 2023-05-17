@@ -5,11 +5,13 @@ import { ProductsList } from "./components/ProductsList/ProductsList";
 import { ProductCard } from "./components/ProductCard/ProductCard";
 import { SearchBar } from './components/SearchBar/SearchBar';
 import { Layout } from "./components/Layout/Layout";
+import { ProductDetails } from "./components/ProductDetails/ProductDetails";
 
 function App() {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
     fetch('https://dummyjson.com/products?limit=100')
@@ -30,22 +32,33 @@ function App() {
     setFilteredProducts(filtered);
   }
 
+  function handleProductClick(id) {
+    const product = filteredProducts.find(p => p.id === id);
+    setSelectedProduct(product);
+  }
+
   return (
     <>
       <Layout />
       <SearchBar handleSearch={handleSearch} searchTerm={searchTerm} />
-      <ProductsList>
-        {
-          filteredProducts.map(product => (
-            <ProductCard 
-            key={product.id}
-            title={product.title}
-            img={product.images[0]}
-            price={product.price}
-            />
-          ))
-        }
-      </ProductsList>
+      <div>
+        {selectedProduct && 
+        <ProductDetails product={selectedProduct}/>}
+        <ProductsList>
+          {
+            filteredProducts.map(product => (
+              <ProductCard 
+              key={product.id}
+              id={product.id}
+              title={product.title}
+              img={product.images[0]}
+              price={product.price}
+              onProductClick={handleProductClick}
+              />
+            ))
+          }
+        </ProductsList>
+      </div>
     </>
   )
 }

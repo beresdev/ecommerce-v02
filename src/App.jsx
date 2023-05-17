@@ -37,6 +37,8 @@ function App() {
     setSelectedProduct(product);
   }
 
+  console.log(selectedProduct);
+
   return (
     <>
       <Layout />

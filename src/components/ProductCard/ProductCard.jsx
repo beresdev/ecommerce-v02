@@ -3,6 +3,10 @@ import { AiFillPlusCircle } from "react-icons/ai";
 
 function ProductCard(props) {
 
+  const handleAddToCart = () => {
+    props.addToCart();
+  };
+
   return (
     <div className="product-card-container" >
       <div className="product-card">
@@ -14,7 +18,10 @@ function ProductCard(props) {
           <p className="price">$ {props.price}</p>
         </div>
       </div>
-      <AiFillPlusCircle className="addToCart-button" />
+      <AiFillPlusCircle
+        className="addToCart-button"
+        onClick={handleAddToCart}
+      />
     </div>
   );
 }

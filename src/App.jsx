@@ -37,7 +37,9 @@ function App() {
     setSelectedProduct(product);
   }
 
-  console.log(selectedProduct);
+  const handleCloseProduct =() => {
+    setSelectedProduct(null);
+  }
 
   return (
     <>
@@ -45,7 +47,7 @@ function App() {
       <SearchBar handleSearch={handleSearch} searchTerm={searchTerm} />
       <div>
         {selectedProduct && 
-        <ProductDetails product={selectedProduct}/>}
+        <ProductDetails product={selectedProduct} onClose={handleCloseProduct}/>}
         <ProductsList>
           {
             filteredProducts.map(product => (

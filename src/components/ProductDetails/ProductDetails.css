@@ -17,6 +17,10 @@
     top: 10px;
 }
 
+.product-details-container .close-button:hover {
+    cursor: pointer;
+}
+
 .images-container {
     width: 80%;
     height: auto;

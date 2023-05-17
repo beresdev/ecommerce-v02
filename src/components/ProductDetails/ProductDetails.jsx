@@ -4,9 +4,13 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { FaShareAlt } from 'react-icons/fa';
 
 function ProductDetails(props) {
+  const handleCloseClick = () => {
+    props.onClose();
+  }
+
   return (
     <div className="product-details-container">
-      <AiFillCloseCircle className="close-button" />
+      <AiFillCloseCircle className="close-button" onClick={handleCloseClick}/>
       <div className="images-container">
         <ImageSlider images={props.product.images} />
       </div>

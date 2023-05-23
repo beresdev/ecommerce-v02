@@ -1,0 +1,22 @@
+.sm-buttons-container {
+    width: 40%;
+    display: flex;
+    position: relative;
+    top: -10px;
+    padding-left: 10px;
+    justify-content: space-around;
+}
+
+.sm-buttons-container > button {
+    float: left;
+    animation: slideIn .5s ease-in-out;
+}
+
+@keyframes slideIn {
+    0% {
+      transform: translateX(-130%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }

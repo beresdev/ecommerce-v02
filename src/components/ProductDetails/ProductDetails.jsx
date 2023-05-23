@@ -2,10 +2,18 @@ import { ImageSlider } from "./ImageSlider";
 import "./ProductDetails.css";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { FaShareAlt } from 'react-icons/fa';
+import { SocialMediaList } from "./SocialMediaList";
+import { useState } from "react";
 
 function ProductDetails(props) {
+
+  const [showList, setShowList] = useState(false)
   const handleCloseClick = () => {
     props.onClose();
+  }
+
+  function shareOptions() {
+    setShowList(!showList);
   }
 
   return (
@@ -17,7 +25,8 @@ function ProductDetails(props) {
       <div className="name_share_price-container">
         <div className="name-share">
             <p className="product-title">{props.product.title}</p>
-            <FaShareAlt className="share-icon"/>
+            <FaShareAlt className="share-icon" onClick={shareOptions}/>
+             {showList && <SocialMediaList isVisible={showList} />} {/* SocialMediaList component is rendered if showList is true */}
         </div>
         <p className="product-price">$ {props.product.price}</p>
       </div>

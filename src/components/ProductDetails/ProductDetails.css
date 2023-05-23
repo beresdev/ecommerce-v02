@@ -38,7 +38,7 @@
 
 .name_share_price-container .name-share {
     display: flex;
-    width: 60%;
+    width: 80%;
 }
 
 .name-share .product-title {
@@ -52,6 +52,10 @@
     top: -10px;
     color: var(--orange-light);
     padding-left: 15px;
+}
+
+.name-share .share-icon:hover {
+    cursor: pointer;
 }
 
 .product-details-container .product-description {

@@ -58,7 +58,7 @@ function App() {
       <SearchBar handleSearch={handleSearch} searchTerm={searchTerm} />
       <div>
         {selectedProduct && 
-        <ProductDetails product={selectedProduct} onClose={handleCloseProduct}/>}
+        <ProductDetails product={selectedProduct} onClose={handleCloseProduct} addToCart={() => addToCart(selectedProduct)} />}
         <ProductsList>
           {
             filteredProducts.map(product => (
@@ -73,7 +73,7 @@ function App() {
               />
             ))
           }
-        </ProductsList>     
+        </ProductsList>
       </div>
       {showCart && <CartItems cartItems={cartItems} />}
     </>

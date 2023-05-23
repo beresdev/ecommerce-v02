@@ -76,3 +76,12 @@
     color: var(--white1);
     bottom: 20px;
 }
+
+.product-details-container .add-to-cart-button:hover {
+    cursor: pointer;
+}
+
+.product-details-container .add-to-cart-button:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    transform: scale(0.95);
+}

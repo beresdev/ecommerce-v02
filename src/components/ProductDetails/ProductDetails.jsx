@@ -22,7 +22,7 @@ function ProductDetails(props) {
         <p className="product-price">$ {props.product.price}</p>
       </div>
       <p className="product-description">{props.product.description}</p>
-      <button className="add-to-cart-button">Add to cart</button>
+      <button className="add-to-cart-button" onClick={props.addToCart}>Add to cart</button>
     </div>
   );
 }

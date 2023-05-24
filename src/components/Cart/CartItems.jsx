@@ -36,7 +36,7 @@ function CartItems({ cartItems }) {
                   </figure>
                   <div className="product-cart-data">
                     <h3 className="product-cart-name">{item.title}</h3>
-                    <p className="product-cart-price">{item.price}</p>
+                    <p className="product-cart-price">$ {item.price}</p>
                   </div>
                 </div>
                 <div className="product-cart-options">
@@ -58,7 +58,8 @@ function CartItems({ cartItems }) {
               </li>
             ))}
           </ul>
-          <p>Total: </p>
+          <p className="total">Total: $ </p>
+          <button className="action-cart-button">Inicia sesión</button>
         </>
       )}
     </div>
